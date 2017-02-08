@@ -25,7 +25,8 @@ resizeOne.addEventListener('mousedown', () => {
 
 function resizeBlockTwo(event) {
     two.style.flex = 'none';
-    two.style.width = event.pageX - one.offsetWidth - resizeTwo.offsetWidth * 2 + 'px';
+    two.style.width = event.pageX - one.offsetWidth +'px';
+    two.style.maxWidth = 65 +'%';
     three.style.flex = 1;
 }
 
