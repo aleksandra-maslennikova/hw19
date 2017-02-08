@@ -33,3 +33,33 @@ solution("ActiveModel::Errors");//active_model/errors
 solution("MAINCompany::BEST-MAINUser");//"main_company/best_main_user"
 solution("HelloHowAreYou") //"hello_how_are_you"
 solution("MyNAMEIsBOND-JamesBond")// => my_name_is_bond_james_bond"
+
+/*
+Сделайте таблицу 5x5
+При клике на элемент, изменяйте цвет у элемента на красный.
+Но цвет у элемента должен изменяться пропорционально в другой половине квадрата
+Пример 3х3:
+[]|[]|[]
+[]|[]|[]
+[]|[]|[]
+кликаем сюда ->[]|[]|[]
+               []|[]|[]
+               []|[]|[x] <- загорается тут
+               
+                []|[]|[]
+кликаем сюда -> []|[]|[x] <- загорается тут
+                []|[]|[x]
+*/
+
+let elements = document.querySelectorAll('td');
+let newArr = [...elements];
+let tbody = document.querySelector('tbody');
+
+tbody.addEventListener('click', e => {
+  let cell = e.target;
+  if (cell.tagName === 'TD') {
+    let index = newArr.indexOf(cell);
+    let activeIndex = newArr.length - 1 - index;
+    newArr[activeIndex].style.backgroundColor = 'red';
+  }
+})
